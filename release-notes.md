@@ -1,3 +1,21 @@
+# 1.1.72
+
+## 中文
+
+- 版本 **1.1.72**，适配 **DSH 0.2.1-rc.2**（`dshTarget` 同步更新，仍兼容 0.2.0-rc.2）。
+- #40 跟进 0.2.1 的 `requiredContexts` 收口：complete 预设仍保留 dsh-purge 注入，同时不丢 required 运行时上下文。
+- #77 跟进 0.2.1 客户端 `append()` 的 `revised.size > 0` 守卫，回退标记仍会立即撤掉已发送消息。
+- #32 改为清理 0.2.1 仅存的 Web 变量说明品牌；#80 识别官方极简预设自带的只读 `tool-fs`，不再误报待处理。
+- 0.2.1 不再随宿主分发 hooks / invariant 文件：相关补丁自动判定为不适用或已就绪，不影响应用。
+
+## English
+
+- **1.1.72** targets **DSH 0.2.1-rc.2** (`dshTarget` updated; 0.2.0-rc.2 remains compatible).
+- #40 follows the 0.2.1 `requiredContexts` tail: complete presets keep the dsh-purge inject and required runtime contexts.
+- #77 follows the 0.2.1 client `append()` guard (`revised.size > 0`), so rewind still drops sent messages immediately.
+- #32 neutralizes the only remaining Web branding string in 0.2.1; #80 recognizes the official minimal preset's read-only `tool-fs`.
+- 0.2.1 no longer ships hooks / invariant files: those patches settle as not applicable or already ready.
+
 # 1.1.71
 
 ## 中文
