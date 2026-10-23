@@ -28,7 +28,8 @@
   config:
     includeHarnessIdentity: false
     personaPrefix: ""
-    personaSuffix: Your working directory is {{cwd}}.
+    # 0.2.1 起 cwd 不再是 prompt variable，工作目录由 working-directory:current 上下文提供。
+    personaSuffix: ""
 
 - id: dsh-purge
   inject: [systemPrompt, tools]

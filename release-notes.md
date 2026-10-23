@@ -1,3 +1,21 @@
+# 1.1.74
+
+## 中文
+
+- 版本 **1.1.74**，修复 DSH 0.2.1 下 `unknown prompt variable "{{cwd}}"` 导致模型调用失败。
+- 0.2.1 移除了 `cwd` prompt variable，工作目录改由 `working-directory:current` 上下文提供：
+  - `cordis.patch.yml` 不再把 `{{cwd}}` 写进 `personaSuffix`；
+  - 身份清洗只在宿主确实注册了 `cwd` 变量时才补 persona suffix，0.2.1 直接交给官方上下文。
+- 仍兼容 0.2.0-rc.2：那边存在 `cwd` 变量时保留原来的工作目录后缀。
+
+## English
+
+- **1.1.74** fixes `unknown prompt variable "{{cwd}}"` on DSH 0.2.1, which aborted model calls.
+- 0.2.1 removed the `cwd` prompt variable; the working directory now comes from the `working-directory:current` context:
+  - `cordis.patch.yml` no longer writes `{{cwd}}` into `personaSuffix`;
+  - the identity rewrite only adds a persona suffix when the host actually registers `cwd`; on 0.2.1 the official context owns it.
+- 0.2.0-rc.2 remains compatible: its `cwd` variable still gets the original working-directory suffix.
+
 # 1.1.72
 
 ## 中文
